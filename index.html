@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Page Title</title>
-    <style>
-        bofy{
-          display: grid;
-          grid-template-rows: 100px 1fr 300px;
-        }
-    </style>
-  </head>
-  <body>
-   
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Project1: Collage</title>
+  <style>
+    body {
+      height: 800px;
+      display: grid;
+      grid-template-rows: 100px 1fr 300px;
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+    #item1 {
+      background: red;
+      grid-column: 1 / 4;
+    }
+    #item2 {
+      background: green;
+      grid-row: 3;  
+      grid-column: 3;
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="item1">Header area</div>
+  <div id="item2">Footer right box</div>
+</body>
 </html>
