@@ -1,0 +1,108 @@
+/* ================================
+   MUFC Landing Page — landing.css
+   (No dependencies; white + red)
+   ================================ */
+
+/* Theme */
+:root{
+  --red:#DA291C;                 /* United Red */
+  --bg:#DA291C;                  /* Page background */
+  --fg:#111111;                  /* Main text (black) */
+  --muted:#444444;               /* Secondary text */
+  --line:#E5E7EB;                /* Light borders */
+  --card:#FFFFFF;                /* Card background */
+  --accent:#D7263D;              /* Link/button accent (red variant) */
+}
+
+/* Base */
+*{ box-sizing:border-box }
+html,body{ height:100% }
+body{
+  margin:0;
+  background:var(--bg);          /* fixed: use white background */
+  color:var(--fg);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height:1.5;
+}
+img{ max-width:100%; display:block }
+a{ color:var(--accent); text-decoration:none }
+a:hover, a:focus{ text-decoration:underline; outline:none }
+
+/* Layout */
+.landing{
+  min-height:100dvh;             /* full screen height */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+}
+
+.landing-card{
+  width:100%;
+  max-width:680px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+/* Logo */
+.logo{
+  width:200px;
+  height:200px;
+  margin:0 auto 16px;
+  object-fit:contain;
+  background:#000;               /* looks clean behind transparent PNGs */
+  border-radius:50%;
+  border:2px solid var(--line);
+  padding:10px;
+}
+
+/* Text */
+.title{
+  font-family: Anton, Impact, sans-serif;
+  font-weight:400;
+  font-size:clamp(2rem,6vw,3.2rem);
+  margin:6px 0 2px;
+  color: var(--red);             /* title in red */
+}
+.tagline{
+  color:var(--muted);
+  margin:0 0 18px;
+}
+
+/* Buttons */
+.landing-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:8px;
+}
+
+/* Make ALL buttons look like the History button (red) */
+.btn{
+  display:inline-block;
+  padding:.9rem 1.1rem;
+  border-radius:999px;
+  border:1px solid transparent;
+  background:var(--red);
+  color:#fff;
+  font-weight:700;
+}
+.btn.primary{ /* kept for compatibility; same as .btn now */
+  background:var(--red);
+  color:#fff;
+  border-color:transparent;
+}
+.btn.big{ font-size:1rem }
+.btn:focus-visible{ outline:3px solid #FFCCCB; outline-offset:2px }
+
+/* Footer */
+.footer{
+  text-align:center;
+  color:var(--muted);
+  padding:16px;
+}
