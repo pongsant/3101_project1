@@ -1,0 +1,114 @@
+/* ===============================
+   MUFC Simple Site — styles.css
+   Theme: Black + Red
+   Beginner‑friendly CSS (HTML + CSS only)
+   How to use:
+   1) Add this in <head> of each page:
+      <link rel="stylesheet" href="styles.css">
+   2) On Page 1, set your collage section to: class="grid grid-history"
+   3) On Page 2, set the XI section to: class="grid grid-xi"
+   4) On Page 3 (later), use: class="grid grid-fans"
+   =============================== */
+
+/* --- Theme colors --- */
+:root{
+    --red:#DA291C;     /* United Red */
+    --black:#111111;   /* Background */
+    --fg:#F5F5F5;      /* Main text */
+    --muted:#B8B8B8;   /* Secondary text */
+    --line:#26262E;    /* Subtle borders */
+    --card:#18181C;    /* Tile background */
+    --accent:#FFD166;  /* Small link/button accent */
+  }
+  
+  /* --- Base elements --- */
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:var(--black); color:var(--fg);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    line-height:1.5;
+  }
+  img{max-width:100%; display:block}
+  a{color:var(--accent); text-decoration:none}
+  a:hover,a:focus{text-decoration:underline; outline:none}
+  .wrap{max-width:1100px; margin:auto; padding:16px}
+  
+  /* --- Header + site nav --- */
+  header{border-bottom:1px solid var(--line)}
+  h1{
+    font-family: Anton, Impact, sans-serif;
+    font-weight:400; margin:.3em 0; font-size:clamp(2rem,5vw,3rem);
+  }
+  nav{display:flex; gap:.5rem; flex-wrap:wrap; padding-bottom:12px}
+  nav a{
+    padding:.5rem .8rem; border:1px solid var(--line); border-radius:999px;
+    background:#131318; color:var(--fg);
+  }
+  nav a[aria-current="page"]{background:var(--red); color:#fff; border-color:transparent}
+  
+  /* --- Buttons (links styled as buttons) --- */
+  .actions{display:flex; gap:10px; flex-wrap:wrap; margin:12px 0 20px}
+  .btn{
+    display:inline-block; padding:.65rem .9rem; border-radius:10px;
+    border:1px solid var(--line); background:#15151A; color:var(--fg);
+    font-weight:700;
+  }
+  .btn.primary{background:var(--red); color:#fff; border-color:transparent}
+  .btn:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+  
+  /* --- Cards / tiles --- */
+  figure, article{
+    margin:0; background:var(--card); border:1px solid var(--line); border-radius:8px; overflow:hidden;
+  }
+  figure img{width:100%; height:100%; object-fit:cover}
+  figcaption{font-size:.9rem; color:var(--muted); padding:6px 8px; background:#141418}
+  article{padding:10px 12px}
+  article h2{margin:.2rem 0 .4rem; font-size:1.2rem}
+  
+  /* --- Global grid wrapper class --- */
+  .grid{display:grid; gap:10px}
+  
+  /* ===============================
+     PAGE 1 — History collage (mosaic)
+     Add class: class="grid grid-history"
+     =============================== */
+  .grid-history{grid-template-columns:repeat(4, 1fr)}
+  /* Optional size helpers for a collage feel: */
+  .wide{grid-column:span 2}
+  .tall{grid-row:span 2}
+  
+  /* ===============================
+     PAGE 2 — Best XI (orderly cards)
+     Add class: class="grid grid-xi"
+     =============================== */
+  .grid-xi{grid-template-columns:repeat(5, 1fr)}
+  .grid-xi figure img{height:160px}
+  
+  /* ===============================
+     PAGE 3 — Fans & Matchday (hero + satellites)
+     Add class: class="grid grid-fans"
+     Markup idea (later): <figure class="hero"> … </figure> and several <figure class="thumb"> … </figure>
+     =============================== */
+  .grid-fans{grid-template-columns:repeat(12, 1fr); grid-auto-rows:8vw}
+  .hero{grid-column:2 / span 8; grid-row:2 / span 6}
+  .thumb{grid-column:span 2; grid-row:span 2}
+  
+  /* --- Back link button --- */
+  .back{
+    display:inline-block; margin:10px 0; padding:.5rem .8rem;
+    border:1px solid var(--line); border-radius:8px; background:#15151A; color:#fff;
+  }
+  
+  /* --- Footer --- */
+  footer{border-top:1px solid var(--line); color:var(--muted); margin-top:20px; padding:16px}
+  
+  /* --- Responsive tweaks --- */
+  @media (max-width:900px){
+    .grid-fans{grid-auto-rows:16vw}
+  }
+  @media (max-width:700px){
+    .grid-history{grid-template-columns:repeat(2, 1fr)}
+    .grid-xi{grid-template-columns:repeat(2, 1fr)}
+  }
+  
