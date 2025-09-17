@@ -1,6 +1,3 @@
-
-
-/* --- Theme colors --- */
 :root{
     --red:#DA291C;     /* United Red */
     --black:#111111;   /* Background */
@@ -101,4 +98,24 @@
     .grid-history{grid-template-columns:repeat(2, 1fr)}
     .grid-xi{grid-template-columns:repeat(2, 1fr)}
   }
+
+  /* --- Page 1 photo captions: title + description --- */
+.grid-history figcaption{
+    display: flex;            /* stack lines */
+    flex-direction: column;
+    gap: 2px;                 /* little space between lines */
+    border-top: 1px solid var(--line);
+  }
+  
+  .cap-title{
+    font-weight: 700;         /* bold title */
+    color: #eee;              /* a bit brighter */
+  }
+  
+  .cap-desc{
+    font-size: .9rem;         /* smaller description text */
+    color: var(--muted);      /* softer color */
+    line-height: 1.4;
+  }
+  
   
