@@ -1,29 +1,198 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Project1: Collage</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manchester United — History & Icons (Page 1)</title>
+
+  <!-- Google Fonts: simple, athletic heading + clean body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      height: 800px;
-      display: grid;
-      grid-template-rows: 100px 1fr 300px;
-      grid-template-columns: 2fr 1fr 1fr;
+    /* ========== BASIC THEME (simple to explain) ========== */
+    :root{
+      --red:#DA291C;   /* United red */
+      --gold:#FBE122;  /* accent */
+      --fg:#F5F5F5;    /* text */
+      --muted:#B9B9B9; /* secondary text */
+      --bg:#0F0F12;    /* dark background */
+      --card:#15151A;  /* tile background */
+      --line:#22222A;  /* subtle borders */
     }
-    #item1 {
-      background: red;
-      grid-column: 1 / 4;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--fg);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.5;
     }
-    #item2 {
-      background: green;
-      grid-row: 3;  
-      grid-column: 3;
+    a{color:var(--gold); text-decoration:none}
+    a:hover, a:focus{text-decoration:underline; outline:none}
+
+    /* ========== HEADER + NAV ========== */
+    header{padding:16px clamp(12px,2vw,24px); border-bottom:1px solid var(--line)}
+    .kicker{letter-spacing:.14em; text-transform:uppercase; font-size:.8rem; color:var(--muted)}
+    h1{font-family:'Anton', Impact, sans-serif; font-weight:400; margin:.2em 0 .4em; font-size:clamp(2rem,5vw,3.5rem)}
+    nav{display:flex; gap:.75rem; flex-wrap:wrap}
+    nav a{padding:.55rem .9rem; border:1px solid var(--line); border-radius:999px; background:#131317}
+    nav a[aria-current="page"]{background:var(--red); color:#fff; border-color:transparent}
+
+    /* ========== PAGE LAYOUT ========== */
+    main{padding:clamp(12px,2vw,24px)}
+    .lead{max-width:900px; margin:0 0 16px; color:var(--fg)}
+    .muted{color:var(--muted)}
+
+    .actions{display:flex; gap:12px; flex-wrap:wrap; margin:12px 0 24px}
+    .btn{display:inline-block; padding:.75rem 1rem; border-radius:10px; border:1px solid var(--line); background:#17171c; color:var(--fg); font-weight:600}
+    .btn.primary{background:var(--red); color:#fff; border-color:transparent}
+    .btn.outline{background:transparent}
+    .btn:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+
+    /* ========== GRID (CSS Grid: simple to demo) ========== */
+    .grid{display:grid; gap:12px}
+    /* 12 columns, short auto rows create masonry-like blocks */
+    .p1{grid-template-columns:repeat(12, 1fr); grid-auto-rows:8vw}
+
+    /* Tile sizes we can apply per item */
+    .span-6x2{grid-column:span 6; grid-row:span 2}
+    .span-4x4{grid-column:span 4; grid-row:span 4}
+    .span-3x3{grid-column:span 3; grid-row:span 3}
+    .span-2x2{grid-column:span 2; grid-row:span 2}
+
+    /* Card/tile styling */
+    figure, article{margin:0; background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; display:flex; flex-direction:column}
+    figure img{width:100%; height:100%; object-fit:cover}
+    figcaption{padding:8px 10px; font-size:.9rem; color:var(--muted); background:#141418}
+
+    article{padding:12px}
+    article h2{font-size:1.2rem; margin:0 0 .4rem; font-weight:700}
+
+    /* Hover/focus caption reveal (beginner-friendly: always visible is fine; we also add a mild effect) */
+    figure:hover figcaption, figure:focus-within figcaption{color:#DDD}
+
+    /* RESPONSIVE: on small screens, fewer columns and taller rows */
+    @media (max-width:900px){ .p1{grid-auto-rows:16vw} }
+    @media (max-width:600px){
+      .p1{grid-template-columns:repeat(6,1fr)}
     }
+
+    footer{padding:24px; border-top:1px solid var(--line); color:var(--muted)}
+    footer small{display:block; margin-bottom:8px}
+    details summary{cursor:pointer}
   </style>
 </head>
 <body>
-  
-  <div id="item1">Header area</div>
-  <div id="item2">Footer right box</div>
+  <header>
+    <div class="kicker">Web Collage · Page 1</div>
+    <h1>Manchester United — History & Icons</h1>
+    <nav aria-label="Site Navigation">
+      <!-- "index.html" is this page; page2.html and page3.html will be added later -->
+      <a href="index.html" aria-current="page">Page 1: History</a>
+      <a href="page2.html">Page 2: Best XI</a>
+      <a href="page3.html">Page 3: Fans & Matchday</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- SIMPLE INTRO TEXT: you can edit this text to match your voice -->
+    <p class="lead"><strong>Why this topic:</strong> I am a big football fan and my favorite team is <em>Manchester United</em>. I first loved the club because of <strong>Cristiano Ronaldo</strong>. This page is a simple collage of United’s history and famous moments.</p>
+    <p class="muted">Tip: Replace the placeholder images in <code>/assets/</code> with your own files. Keep alt text meaningful so screen‑reader users can understand each image.</p>
+
+    <!-- QUICK BUTTONS TO OTHER PAGES -->
+    <div class="actions" role="group" aria-label="Quick actions">
+      <a class="btn primary" href="page2.html">Go to Page 2 · Best XI</a>
+      <a class="btn outline" href="page3.html">Go to Page 3 · Fans & Matchday</a>
+    </div>
+
+    <!-- ========== COLLAGE GRID (≥10 images + ≥3 text blocks) ========== -->
+    <section class="grid p1" aria-label="History collage mosaic">
+      <!-- IMAGE TILES (placeholders) -->
+      <figure class="span-6x2">
+        <img src="assets/history-01.jpg" alt="Old Trafford wide view on a match night with floodlights" />
+        <figcaption>Old Trafford — “Theatre of Dreams”.</figcaption>
+      </figure>
+
+      <figure class="span-2x2">
+        <img src="assets/history-02.jpg" alt="The Busby Babes team photo, black and white" />
+        <figcaption>Busby Babes (1950s).</figcaption>
+      </figure>
+
+      <figure class="span-3x3">
+        <img src="assets/history-03.jpg" alt="George Best, Denis Law, and Bobby Charlton celebrated as club legends" />
+        <figcaption>Best · Law · Charlton.</figcaption>
+      </figure>
+
+      <figure class="span-4x4">
+        <img src="assets/history-04.jpg" alt="1999 Champions League final celebration" />
+        <figcaption>1999 — Treble sealed in stoppage time.</figcaption>
+      </figure>
+
+      <figure class="span-2x2">
+        <img src="assets/history-05.jpg" alt="Cristiano Ronaldo in the number 7 shirt celebrating with arms wide" />
+        <figcaption>Ronaldo · #7.</figcaption>
+      </figure>
+
+      <figure class="span-2x2">
+        <img src="assets/history-06.jpg" alt="Wayne Rooney’s overhead kick against Manchester City" />
+        <figcaption>Rooney overhead vs City.</figcaption>
+      </figure>
+
+      <figure class="span-2x2">
+        <img src="assets/history-07.jpg" alt="Marcus Rashford sprinting down the left wing under floodlights" />
+        <figcaption>Rashford under the lights.</figcaption>
+      </figure>
+
+      <figure class="span-2x2">
+        <img src="assets/history-08.jpg" alt="Close-up of a red kit fabric with stitched crest" />
+        <figcaption>Kit texture (replace with your photo).</figcaption>
+      </figure>
+
+      <figure class="span-2x2">
+        <img src="assets/history-09.jpg" alt="Ticket stub or match programme cover" />
+        <figcaption>Programme / ticket (your scan).</figcaption>
+      </figure>
+
+      <figure class="span-2x2">
+        <img src="assets/history-10.jpg" alt="Old newspaper headline about a United win" />
+        <figcaption>Newspaper clipping.</figcaption>
+      </figure>
+
+      <!-- TEXT TILES (at least 3 blocks) -->
+      <article class="span-3x3">
+        <h2>What is Manchester United?</h2>
+        <p>Manchester United is an English football club based in Manchester. The team plays at Old Trafford and has a long history of attacking football, famous players, and loyal fans around the world.</p>
+      </article>
+
+      <article class="span-4x4">
+        <h2>Short timeline</h2>
+        <ul>
+          <li><strong>1950s:</strong> Busby Babes rise; tragedy and rebuild.</li>
+          <li><strong>1968:</strong> First European Cup win (Best, Law, Charlton).</li>
+          <li><strong>1999:</strong> Historic Treble — league, cup, Europe.</li>
+          <li><strong>2003–09:</strong> Ronaldo era, more titles and a UCL trophy.</li>
+          <li><strong>Today:</strong> New chapters with academy talent and global support.</li>
+        </ul>
+      </article>
+
+      <article class="span-6x2">
+        <h2>Why I chose this</h2>
+        <p>I love football, and United is the team that made me fall in love with the sport. Ronaldo inspired me first, and then I learned the club’s deeper story — youth, courage, and success. This collage shows those pieces together.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <small>© 2025 · Built as a class project using HTML, CSS Grid, and accessible alt text.</small>
+    <details>
+      <summary>Credits (replace with your real links)</summary>
+      <ul>
+        <li>Photos labeled “(me)” are my own.</li>
+        <li>Found images: add <em>title · creator · year · link · license</em> for each one.</li>
+        <li>Any AI images: list the tool and prompt.</li>
+      </ul>
+    </details>
+  </footer>
 </body>
 </html>
