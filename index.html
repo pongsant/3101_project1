@@ -5,91 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Manchester United — Welcome</title>
 
-  <!-- Google Fonts (match your theme) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Your black & red theme -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Theme -->
+  <link rel="stylesheet" href="landding.css">
 
-  <style>
-    /* Extra tiny landing tweaks (kept very simple) */
-    .landing {
-      min-height: 100dvh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px;
-    }
-    .landing-card {
-      max-width: 680px;
-      width: 100%;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 24px;
-      margin: 0 auto;
-    }
-    .logo {
-      width: 180px;
-      height: 180px;
-      margin: 0 auto 16px;
-      display: block;
-      object-fit: contain;
-      background: #000; /* looks clean if logo has transparent bg */
-      border-radius: 50%;
-      border: 2px solid var(--line);
-      padding: 10px;
-    }
-    .title {
-      font-family: Anton, Impact, sans-serif;
-      font-size: clamp(2rem, 6vw, 3.2rem);
-      font-weight: 400;
-      margin: 6px 0 2px;
-    }
-    .tagline {
-      color: var(--muted);
-      margin: 0 0 18px;
-    }
-    .landing-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 8px;
-    }
-    .btn.big {
-      padding: .9rem 1.1rem;
-      font-size: 1rem;
-      border-radius: 999px;
-    }
-    footer {
-      text-align: center;
-      color: var(--muted);
-    }
-  </style>
+
 </head>
 <body>
   <main class="landing">
     <div class="landing-card" role="region" aria-labelledby="site-title">
-      
+
+      <!-- CHANGE THIS PATH IF YOUR FILE IS IN images/ -->
       <img class="logo" src="assets/logomanu.png" alt="Manchester United crest">
 
       <h1 id="site-title" class="title">Manchester United</h1>
       <p class="tagline">WEB BY PONGSANT</p>
 
       <div class="landing-actions" role="navigation" aria-label="Enter site">
-        <a class="btn primary big" href="page1.html"> History</a>
-        <a class="btn big" href="page2.html">Best XI</a>
-        <a class="btn big" href="page3.html"> Fans & Matchday</a>
+        <a class="btn primary big" href="page1.html">Page 1 · History</a>
+        <a class="btn big" href="page2.html">Page 2 · Best XI</a>
+        <a class="btn big" href="page3.html">Page 3 · Fans & Matchday</a>
       </div>
     </div>
   </main>
 
   <footer class="wrap">
-    <small>© 2025 · Class project. Use the buttons above to navigate.</small>
+    <small>© 2025 · Class project.</small>
   </footer>
 </body>
 </html>
