@@ -1,14 +1,4 @@
-/* ===============================
-   MUFC Simple Site — styles.css
-   Theme: Black + Red
-   Beginner‑friendly CSS (HTML + CSS only)
-   How to use:
-   1) Add this in <head> of each page:
-      <link rel="stylesheet" href="styles.css">
-   2) On Page 1, set your collage section to: class="grid grid-history"
-   3) On Page 2, set the XI section to: class="grid grid-xi"
-   4) On Page 3 (later), use: class="grid grid-fans"
-   =============================== */
+
 
 /* --- Theme colors --- */
 :root{
