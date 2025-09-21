@@ -1,15 +1,14 @@
 
 :root{
-    --red:#DA291C;                 
-    --bg:#FFFFFF;                  
-    --fg:#111111;                  
-    --muted:#444444;               
-    --line:#E5E7EB;                
-    --card:#FFFFFF;                
-    --accent:#D7263D;              
+  --red:#DA291C;
+  --bg:#FFFFFF;
+  --fg:#111111;
+  --muted:#444444;
+  --line:#E5E7EB;
+  --card:#FFFFFF;             
   }
   
-  /* Base */
+  
   *{ box-sizing:border-box }
   html,body{ height:100% }
   body{
@@ -22,12 +21,12 @@
   a:hover, a:focus{ text-decoration:underline; outline:none }
   .wrap{ max-width:1100px; margin:auto; padding:16px }
   
-  /* Header + nav */
+  
   header{ border-bottom:1px solid var(--line); background:#fff }
   h1{
     font-family: Anton, Impact, sans-serif;
     font-weight:400; margin:.3em 0; font-size:clamp(2rem,5vw,3rem);
-    color: var(--red); /* headline in red to match Page 1 */
+    color: var(--red);
   }
   nav{ display:flex; gap:.5rem; flex-wrap:wrap; padding-bottom:12px }
   nav a{
@@ -36,50 +35,49 @@
   }
   nav a[aria-current="page"]{ background:var(--red); color:#fff; border-color:var(--red) }
   
-  /* Optional back link */
+  
   .back{
     display:inline-block; margin:10px 0; padding:.5rem .8rem;
     border:1px solid var(--line); border-radius:8px; background:#ffffff; color:#111;
   }
   
   
-  /* Equal cards: desktop 5 columns, tablet 3, mobile 2 */
   .grid{ display:grid; gap:12px }
   .grid-xi{ grid-template-columns: repeat(4, 1fr) }
   
   @media (max-width:900px){ .grid-xi{ grid-template-columns: repeat(3, 1fr) } }
   @media (max-width:900px){ .grid-xi{ grid-template-columns: repeat(2, 1fr) } }
   
-  /* Player cards */
+  
   figure, article{
     margin:0; background:var(--card); border:1px solid var(--line);
     border-radius:10px; overflow:hidden;
   }
   
   .card{
-    display:flex; flex-direction:column;   /* allow caption to grow */
+    display:flex; flex-direction:column;   
     background:var(--card);
   }
   
-  /* Square images for a neat grid; captions never get cut */
+  
   .card img{
     width:100%;
-    aspect-ratio: 1 / 1;     /* square tiles */
-    object-fit: cover;       /* crop nicely */
+    aspect-ratio: 1 / 1;     
+    object-fit: cover;       
     display:block;
   }
   
-  /* Two-line captions (black/dark on white) */
+  
   figcaption{
     padding:8px 10px; background:#F7F7F7; border-top:1px solid var(--line);
     display:flex; flex-direction:column; gap:2px; font-size:.95rem;
     overflow-wrap:anywhere; word-break:break-word; line-height:1.5; max-width:100%;
-    color:#111;                  /* caption text = black */
+    color:#111;                 
   }
-  .cap-title{ font-weight:700; color:#111 }   /* title = black */
-  .cap-desc { font-size:.9rem; color:#333 }   /* description = dark gray */
+  .cap-title{ font-weight:700; color:#111 }   
+  .cap-desc { font-size:.9rem; color:#333 }   
   
-  /* Optional notes under the grid */
+  
   .note{
     background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px;
     color:#111;
