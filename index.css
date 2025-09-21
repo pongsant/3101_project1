@@ -1,25 +1,19 @@
-/* ================================
-   MUFC Landing Page — landing.css
-   (No dependencies; white + red)
-   ================================ */
 
-/* Theme */
 :root{
-  --red:#DA291C;                 /* United Red */
-  --bg:#DA291C;                  /* Page background */
-  --fg:#111111;                  /* Main text (black) */
-  --muted:#444444;               /* Secondary text */
-  --line:#E5E7EB;                /* Light borders */
-  --card:#FFFFFF;                /* Card background */
-  --accent:#D7263D;              /* Link/button accent (red variant) */
+  --red:#DA291C;                 
+  --bg:#DA291C;                  
+  --fg:#111111;                  
+  --muted:#444444;               
+  --line:#E5E7EB;                
+  --card:#FFFFFF;                
+  --accent:#D7263D;              
 }
 
-/* Base */
 *{ box-sizing:border-box }
 html,body{ height:100% }
 body{
   margin:0;
-  background:var(--bg);          /* fixed: use white background */
+  background:var(--bg);          
   color:var(--fg);
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   line-height:1.5;
@@ -28,9 +22,9 @@ img{ max-width:100%; display:block }
 a{ color:var(--accent); text-decoration:none }
 a:hover, a:focus{ text-decoration:underline; outline:none }
 
-/* Layout */
+
 .landing{
-  min-height:100dvh;             /* full screen height */
+  min-height:100dvh;             
   display:flex;
   align-items:center;
   justify-content:center;
@@ -54,7 +48,7 @@ a:hover, a:focus{ text-decoration:underline; outline:none }
   height:200px;
   margin:0 auto 16px;
   object-fit:contain;
-  background:#000;               /* looks clean behind transparent PNGs */
+  background:#000;               
   border-radius:50%;
   border:2px solid var(--line);
   padding:10px;
@@ -66,14 +60,14 @@ a:hover, a:focus{ text-decoration:underline; outline:none }
   font-weight:400;
   font-size:clamp(2rem,6vw,3.2rem);
   margin:6px 0 2px;
-  color: var(--red);             /* title in red */
+  color: var(--red);             
 }
 .tagline{
   color:var(--muted);
   margin:0 0 18px;
 }
 
-/* Buttons */
+
 .landing-actions{
   display:flex;
   gap:12px;
@@ -82,7 +76,7 @@ a:hover, a:focus{ text-decoration:underline; outline:none }
   margin-top:8px;
 }
 
-/* Make ALL buttons look like the History button (red) */
+
 .btn{
   display:inline-block;
   padding:.9rem 1.1rem;
@@ -92,7 +86,7 @@ a:hover, a:focus{ text-decoration:underline; outline:none }
   color:#fff;
   font-weight:700;
 }
-.btn.primary{ /* kept for compatibility; same as .btn now */
+.btn.primary{ 
   background:var(--red);
   color:#fff;
   border-color:transparent;
@@ -100,7 +94,7 @@ a:hover, a:focus{ text-decoration:underline; outline:none }
 .btn.big{ font-size:1rem }
 .btn:focus-visible{ outline:3px solid #FFCCCB; outline-offset:2px }
 
-/* Footer */
+
 .footer{
   text-align:center;
   color:var(--muted);

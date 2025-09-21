@@ -1,14 +1,14 @@
 :root{
-    --red:#DA291C;                 /* United Red */
-    --black:#FFFFFF;               /* Page background = white */
-    --fg:#111111;                  /* Main text = black */
-    --muted:#444444;               /* Secondary text = dark gray */
-    --line:#E5E7EB;                /* Light borders */
-    --card:#FFFFFF;                /* Card/tile background = white */
-    --accent:#D7263D;              /* Link/button accent (red variant) */
+    --red:#DA291C;                 
+    --black:#FFFFFF;               
+    --fg:#111111;                  
+    --muted:#444444;               
+    --line:#E5E7EB;                
+    --card:#FFFFFF;                
+    --accent:#D7263D;              /
   }
   
-  /* Base */
+  
   *{ box-sizing:border-box }
   html,body{ height:100% }
   body{
@@ -21,12 +21,12 @@
   a:hover,a:focus{ text-decoration:underline; outline:none }
   .wrap{ max-width:1100px; margin:auto; padding:16px }
   
-  /* Header + nav */
+  
   header{ border-bottom:1px solid var(--line); background:#fff }
   h1{
     font-family: Anton, Impact, sans-serif;
     font-weight:400; margin:.3em 0; font-size:clamp(2rem,5vw,3rem);
-    color: var(--red);           /* <-- headline in red */
+    color: var(--red);           
   }
   nav{ display:flex; gap:.5rem; flex-wrap:wrap; padding-bottom:12px }
   nav a{
@@ -35,7 +35,7 @@
   }
   nav a[aria-current="page"]{ background:var(--red); color:#fff; border-color:var(--red) }
   
-  /* Buttons */
+  
   .actions{ display:flex; gap:10px; flex-wrap:wrap; margin:12px 0 20px }
   .btn{
     display:inline-block; padding:.65rem .9rem; border-radius:10px;
@@ -44,49 +44,48 @@
   .btn.primary{ background:var(--red); color:#fff; border-color:var(--red) }
   .btn:focus-visible{ outline:3px solid #FFCCCB; outline-offset:2px }
   
-  /* Cards / tiles */
+  
   figure, article{
     margin:0; background:var(--card); border:1px solid var(--line);
     border-radius:8px; overflow:hidden;
   }
   
-  /* Images: keep natural height so text never gets cut */
+  
   .card{ display:flex; flex-direction:column }
   .card img{
     width:100%; height:auto; object-fit:cover;
   }
   
-  /* Captions: black text under photo */
+  
   figcaption{
     padding:8px 10px; background:#F7F7F7; border-top:1px solid var(--line);
     display:flex; flex-direction:column; gap:2px; font-size:.95rem;
     overflow-wrap:anywhere; word-break:break-word; line-height:1.55; max-width:100%;
-    color:#111;                    /* caption text = black */
+    color:#111;                    
   }
-  .cap-title{ font-weight:700; color:#111 }   /* title line = black */
-  .cap-desc { font-size:.9rem; color:#333 }   /* description line = dark gray */
+  .cap-title{ font-weight:700; color:#111 }   
+  .cap-desc { font-size:.9rem; color:#333 }   
   
   article{ padding:10px 12px; color:#111 }
   article h2{ margin:.2rem 0 .4rem; font-size:1.2rem; color:#111 }
   
-  /* Page 1 layout (History) */
+  
   .grid{ display:grid; gap:12px }
   .grid-history{
     grid-template-columns:repeat(4,1fr);
     grid-auto-rows:auto;
   }
   
-  /* Helpers */
+  
   .wide{ grid-column:span 2 }
   .tall{ grid-row:span 2 }
   
-  /* Footer */
   footer{
     border-top:1px solid var(--line); color:#444; margin-top:20px; padding:16px;
     background:#fff;
   }
   
-  /* Responsive */
+  
   @media (max-width:900px){
     .grid-history{ grid-template-columns:repeat(2,1fr) }
     .wide{ grid-column:span 2 }
