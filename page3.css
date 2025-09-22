@@ -1,38 +1,59 @@
-:root{
-    --red:#DA291C;
-    --bg:#FFFFFF;
-    --fg:#111111;
-    --muted:#444444;
-    --line:#E5E7EB;
-    --card:#FFFFFF;
+
+   :root{
+    --red:#DA291C;     
+    --bg:#FFFFFF;      
+    --fg:#111111;      
+    --muted:#444444;   
+    --line:#E5E7EB;    
+    --card:#FFFFFF;    
   }
   
-  
+  /* BASE*/
   *{ box-sizing:border-box }
   html,body{ height:100% }
   body{
-    margin:0; background:var(--bg); color:var(--fg);
+    margin:0;
+    background:var(--bg);
+    color:var(--fg);
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     line-height:1.5;
   }
   img{ max-width:100%; display:block }
   
-  
+  /* WRAPPER + HEADER + NAV*/
   .wrap{ max-width:1100px; margin:auto; padding:16px }
+  
   header{ border-bottom:1px solid var(--line); background:#fff }
+  
   h1{
     font-family: Anton, Impact, sans-serif;
-    font-weight:400; margin:.3em 0; font-size:clamp(2rem,5vw,3rem);
+    font-weight:400;
+    margin:.3em 0;
+    font-size:clamp(2rem,5vw,3rem);
     color: var(--red);
   }
-  nav{ display:flex; gap:.5rem; flex-wrap:wrap; padding-bottom:12px }
-  nav a{
-    padding:.5rem .8rem; border:1px solid var(--line); border-radius:999px;
-    background:#fff; color:#111; text-decoration:none;
+  
+  nav{
+    display:flex;
+    gap:.5rem;
+    flex-wrap:wrap;
+    padding-bottom:12px;
   }
-  nav a[aria-current="page"]{ background:var(--red); color:#fff; border-color:var(--red) }
+  nav a{
+    padding:.5rem .8rem;
+    border:1px solid var(--line);
+    border-radius:999px;  /* pill tab */
+    background:#fff;
+    color:#111;
+    text-decoration:none;
+  }
+  nav a[aria-current="page"]{
+    background:var(--red);
+    color:#fff;
+    border-color:var(--red);
+  }
   
-  
+  /* MAIN GRID (manager + transfers) */
   .now-grid{
     display:grid;
     gap:12px;
@@ -42,7 +63,7 @@
       "in      out";
   }
   
-  
+  /* Card look shared by all panels */
   .panel{
     background:var(--card);
     border:1px solid var(--line);
@@ -51,37 +72,51 @@
   }
   .panel h2{ margin:.2rem 0 .6rem; font-size:1.2rem }
   
-  
-  .manager{ grid-area: manager; display:grid; grid-template-columns: 160px 1fr; gap:12px }
+  /* Manager block spans full width */
+  .manager{
+    grid-area: manager;
+    display:grid;
+    grid-template-columns: 160px 1fr; /* photo + text */
+    gap:12px;
+  }
   .manager img{ width:100%; border-radius:8px; object-fit:cover }
-  .manager .name{ font-weight:800; }
+  .manager .name{ font-weight:800 }
   .manager .note{ color:var(--muted) }
   
-  .in{ grid-area: in; }
-  .out{ grid-area: out; }
+  /* Transfers columns */
+  .in{ grid-area: in }
+  .out{ grid-area: out }
   
-  
+  /* TRANSFER LIST GRID */
   .list{
     display:grid;
     gap:10px;
-    grid-template-columns: 1fr;        
+    grid-template-columns: 1fr;     /* 1 column by default */
   }
   @media (min-width:900px){
-    .list{ grid-template-columns: 1fr 1fr }  /
+    .list{ grid-template-columns: 1fr 1fr }  /* 2 columns on wider screens */
   }
   
+  /* Transfer card + media */
   figure{
-    margin:0; border:1px solid var(--line); border-radius:8px; overflow:hidden;
+    margin:0;
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
     background:#fff;
   }
   figure img{ width:100%; aspect-ratio: 4 / 3; object-fit:cover }
-  figcaption{ padding:8px 10px; color:#111; background:#F7F7F7; border-top:1px solid var(--line) }
+  figcaption{
+    padding:8px 10px;
+    color:#111;
+    background:#F7F7F7;
+    border-top:1px solid var(--line);
+  }
   figcaption small{ color:var(--muted) }
   
+
   
-  footer{ border-top:1px solid var(--line); color:#444; margin-top:20px; padding:16px; background:#fff }
-  
-  
+  /*HONE LAYOUT */
   @media (max-width:700px){
     .now-grid{
       grid-template-columns: 1fr;
@@ -90,6 +125,6 @@
         "in"
         "out";
     }
-    .manager{ grid-template-columns: 1fr }
+    .manager{ grid-template-columns: 1fr } /* stack photo over text */
   }
   

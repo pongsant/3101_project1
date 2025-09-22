@@ -1,102 +1,102 @@
-
-:root{
-  --red:#DA291C;                 
-  --bg:#DA291C;                  
-  --fg:#111111;                  
-  --muted:#444444;               
-  --line:#E5E7EB;                
-  --card:#FFFFFF;                
-  --accent:#D7263D;              
-}
-
-*{ box-sizing:border-box }
-html,body{ height:100% }
-body{
-  margin:0;
-  background:var(--bg);          
-  color:var(--fg);
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  line-height:1.5;
-}
-img{ max-width:100%; display:block }
-a{ color:var(--accent); text-decoration:none }
-a:hover, a:focus{ text-decoration:underline; outline:none }
-
-
-.landing{
-  min-height:100dvh;             
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:24px;
-}
-
-.landing-card{
-  width:100%;
-  max-width:680px;
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:24px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
-}
-
-/* Logo */
-.logo{
-  width:200px;
-  height:200px;
-  margin:0 auto 16px;
-  object-fit:contain;
-  background:#000;               
-  border-radius:50%;
-  border:2px solid var(--line);
-  padding:10px;
-}
-
-/* Text */
-.title{
-  font-family: Anton, Impact, sans-serif;
-  font-weight:400;
-  font-size:clamp(2rem,6vw,3.2rem);
-  margin:6px 0 2px;
-  color: var(--red);             
-}
-.tagline{
-  color:var(--muted);
-  margin:0 0 18px;
-}
-
-
-.landing-actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  justify-content:center;
-  margin-top:8px;
-}
-
-
-.btn{
-  display:inline-block;
-  padding:.9rem 1.1rem;
-  border-radius:999px;
-  border:1px solid transparent;
-  background:var(--red);
-  color:#fff;
-  font-weight:700;
-}
-.btn.primary{ 
-  background:var(--red);
-  color:#fff;
-  border-color:transparent;
-}
-.btn.big{ font-size:1rem }
-.btn:focus-visible{ outline:3px solid #FFCCCB; outline-offset:2px }
-
-
-.footer{
-  text-align:center;
-  color:var(--muted);
-  padding:16px;
-}
+/*THEME: colors & common tokens */
+   :root{
+    --red:#DA291C;         
+    --bg:#DA291C;          
+    --fg:#111111;          
+    --muted:#444444;       
+    --line:#E5E7EB;        
+    --card:#FFFFFF;        
+    --accent:#D7263D;      
+  }
+  
+  /* BASE: resets & global elements */
+  *{ box-sizing:border-box }
+  html,body{ height:100% }
+  body{
+    margin:0;
+    background:var(--bg);          /* Uses --bg from theme */
+    color:var(--fg);               /* Uses --fg from theme */
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    line-height:1.5;
+  }
+  img{ max-width:100%; display:block }      /* Images scale to container */
+  a{ color:var(--accent); text-decoration:none } /* Accent-colored links */
+  a:hover, a:focus{ text-decoration:underline; outline:none }
+  
+  /* LAYOUT: center the landing "card" section*/
+  .landing{
+    min-height:100dvh;             /* Full viewport height (mobile-safe) */
+    display:flex;                   /* Flexbox center */
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:24px;                   /* Page padding on small screens */
+  }
+  
+  /* COMPONENT: the landing card*/
+  .landing-card{
+    width:100%;
+    max-width:680px;                /* Keeps line-length readable */
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08); /* Soft depth */
+  }
+  
+  /* COMPONENT: club logo block*/
+  .logo{
+    width:200px;
+    height:200px;
+    margin:0 auto 16px;             /* Center and add space below */
+    object-fit:contain;             /* Keep aspect ratio; no squish */
+    background:#000;                /* Black circle background */
+    border-radius:50%;
+    border:2px solid var(--line);
+    padding:10px;                   /* Inner breathing room */
+  }
+  
+  /*TYPOGRAPHY: title & tagline */
+  .title{
+    font-family: Anton, Impact, sans-serif;
+    font-weight:400;
+    font-size:clamp(2rem,6vw,3.2rem); /* Responsive headline size */
+    margin:6px 0 2px;
+    color: var(--red);               /* Big red headline */
+  }
+  .tagline{
+    color:var(--muted);
+    margin:0 0 18px;
+  }
+  
+  /* LAYOUT: row of action buttons on landing */
+  .landing-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;                 /* Wrap on small screens */
+    justify-content:center;
+    margin-top:8px;
+  }
+  
+  /*COMPONENT: buttons*/
+  .btn{
+    display:inline-block;
+    padding:.9rem 1.1rem;
+    border-radius:999px;            /* Pill shape */
+    border:1px solid transparent;
+    background:var(--red);          /* Red button background */
+    color:#fff;
+    font-weight:700;
+  }
+  .btn.primary{
+    background:var(--red);          /* Primary = solid red */
+    color:#fff;
+    border-color:transparent;
+  }
+  .btn.big{ font-size:1rem }
+  .btn:focus-visible{               /* Keyboard-visible focus ring */
+    outline:3px solid #FFCCCB;
+    outline-offset:2px;
+  }
+  
+  

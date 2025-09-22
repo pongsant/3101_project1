@@ -1,93 +1,135 @@
-:root{
-    --red:#DA291C;                 
-    --black:#FFFFFF;               
-    --fg:#111111;                  
-    --muted:#444444;               
-    --line:#E5E7EB;                
-    --card:#FFFFFF;                
-    --accent:#D7263D;              /
+
+   :root{
+    --red:#DA291C;        
+    --bg:#FFFFFF;         
+    --black:#FFFFFF;      
+    --fg:#111111;         
+    --muted:#444444;      
+    --line:#E5E7EB;       
+    --card:#FFFFFF;       
+    --accent:#D7263D;     
   }
   
-  
+  /* BASE / GLOBAL ELEMENTS*/
   *{ box-sizing:border-box }
   html,body{ height:100% }
   body{
-    margin:0; background:var(--black); color:var(--fg);
+    margin:0;
+    background:var(--bg);           /* Use theme background */
+    color:var(--fg);
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     line-height:1.5;
   }
-  img{ max-width:100%; display:block }
-  a{ color:var(--accent); text-decoration:none }
-  a:hover,a:focus{ text-decoration:underline; outline:none }
-  .wrap{ max-width:1100px; margin:auto; padding:16px }
+  img{ max-width:100%; display:block }          /* Images scale to container width */
+  a{ color:var(--accent); text-decoration:none } /* Accent links, no underline by default */
+  a:hover,
+  a:focus{ text-decoration:underline; outline:none }
+  .wrap{ max-width:1100px; margin:auto; padding:16px } /* Centered page container */
   
-  
-  header{ border-bottom:1px solid var(--line); background:#fff }
+  /* HEADER + NAV (top bar) */
+  header{
+    border-bottom:1px solid var(--line);
+    background:#fff;
+  }
   h1{
     font-family: Anton, Impact, sans-serif;
-    font-weight:400; margin:.3em 0; font-size:clamp(2rem,5vw,3rem);
-    color: var(--red);           
+    font-weight:400;
+    margin:.3em 0;
+    font-size:clamp(2rem,5vw,3rem);
+    color: var(--red);                /* Big red page title */
   }
-  nav{ display:flex; gap:.5rem; flex-wrap:wrap; padding-bottom:12px }
+  nav{
+    display:flex; gap:.5rem; flex-wrap:wrap; padding-bottom:12px;
+  }
   nav a{
-    padding:.5rem .8rem; border:1px solid var(--line); border-radius:999px;
-    background:#ffffff; color:#111;
+    padding:.5rem .8rem;
+    border:1px solid var(--line);
+    border-radius:999px;              /* Pill tabs */
+    background:#ffffff;
+    color:#111;
   }
-  nav a[aria-current="page"]{ background:var(--red); color:#fff; border-color:var(--red) }
+  nav a[aria-current="page"]{
+    background:var(--red);            /* Active tab = red */
+    color:#fff;
+    border-color:var(--red);
+  }
   
-  
+  /*ACTION BUTTONS (utility row) */
   .actions{ display:flex; gap:10px; flex-wrap:wrap; margin:12px 0 20px }
   .btn{
-    display:inline-block; padding:.65rem .9rem; border-radius:10px;
-    border:1px solid var(--line); background:#ffffff; color:#111; font-weight:700;
+    display:inline-block;
+    padding:.65rem .9rem;
+    border-radius:10px;
+    border:1px solid var(--line);
+    background:#ffffff;
+    color:#111;
+    font-weight:700;
   }
-  .btn.primary{ background:var(--red); color:#fff; border-color:var(--red) }
-  .btn:focus-visible{ outline:3px solid #FFCCCB; outline-offset:2px }
+  .btn.primary{
+    background:var(--red);
+    color:#fff;
+    border-color:var(--red);
+  }
+  .btn:focus-visible{
+    outline:3px solid #FFCCCB;        /* Accessible keyboard focus */
+    outline-offset:2px;
+  }
   
-  
+  /*CARD / MEDIA BLOCKS*/
   figure, article{
-    margin:0; background:var(--card); border:1px solid var(--line);
-    border-radius:8px; overflow:hidden;
+    margin:0;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;                   /* Clip image corners to the card radius */
   }
-  
   
   .card{ display:flex; flex-direction:column }
   .card img{
-    width:100%; height:auto; object-fit:cover;
+    width:100%;
+    height:auto;
+    object-fit:cover;                  /* Fill width nicely */
   }
   
-  
+  /*CAPTIONS & TEXT INSIDE CARDS*/
   figcaption{
-    padding:8px 10px; background:#F7F7F7; border-top:1px solid var(--line);
-    display:flex; flex-direction:column; gap:2px; font-size:.95rem;
-    overflow-wrap:anywhere; word-break:break-word; line-height:1.55; max-width:100%;
-    color:#111;                    
+    padding:8px 10px;
+    background:#F7F7F7;
+    border-top:1px solid var(--line);
+    display:flex; flex-direction:column; gap:2px;
+    font-size:.95rem;
+    overflow-wrap:anywhere; word-break:break-word; /* Long names don’t overflow */
+    line-height:1.55; max-width:100%;
+    color:#111;
   }
-  .cap-title{ font-weight:700; color:#111 }   
-  .cap-desc { font-size:.9rem; color:#333 }   
+  .cap-title{ font-weight:700; color:#111 }   /* Bold line */
+  .cap-desc { font-size:.9rem; color:#333 }   /* Smaller description */
   
-  article{ padding:10px 12px; color:#111 }
-  article h2{ margin:.2rem 0 .4rem; font-size:1.2rem; color:#111 }
+  article{
+    padding:10px 12px;
+    color:#111;
+  }
+  article h2{
+    margin:.2rem 0 .4rem;
+    font-size:1.2rem;
+    color:#111;
+  }
   
-  
+  /*GRID LAYOUT (history collage) */
   .grid{ display:grid; gap:12px }
   .grid-history{
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);   /* 4 columns on desktop */
     grid-auto-rows:auto;
   }
   
-  
+  /* Spanning helpers for featured tiles */
   .wide{ grid-column:span 2 }
   .tall{ grid-row:span 2 }
   
-  footer{
-    border-top:1px solid var(--line); color:#444; margin-top:20px; padding:16px;
-    background:#fff;
-  }
   
-  
+  /* RESPONSIVE (phones / tablets)*/
   @media (max-width:900px){
-    .grid-history{ grid-template-columns:repeat(2,1fr) }
-    .wide{ grid-column:span 2 }
+    .grid-history{ grid-template-columns:repeat(2,1fr) } /* 2 columns on small screens */
+    .wide{ grid-column:span 2 }                           /* Wide items still full width */
   }
   
